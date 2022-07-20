@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.30999756, y: 0.3}
+  m_AnchoredPosition: {x: 0.30999756, y: 0.29999924}
   m_SizeDelta: {x: -6.78, y: -3.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118324580
@@ -301,8 +301,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 171}
-  m_SizeDelta: {x: 268.48, y: 30.62}
+  m_AnchoredPosition: {x: 13.12, y: 317.64}
+  m_SizeDelta: {x: 452.15, y: 47.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &347406611
 GameObject:
@@ -492,7 +492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -175, y: -195}
+  m_AnchoredPosition: {x: -175, y: -325}
   m_SizeDelta: {x: 290.19, y: 65.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &640044345
@@ -539,9 +539,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420258105}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: HandleDamageButton
+      - m_Target: {fileID: 585880939025609092}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Damage
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -864,7 +864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 176, y: -195}
+  m_AnchoredPosition: {x: 176, y: -325}
   m_SizeDelta: {x: 290.19, y: 65.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1373162043
@@ -911,9 +911,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420258105}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: HandleHealButton
+      - m_Target: {fileID: 585880939025609092}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -961,52 +961,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373162041}
   m_CullTransparentMesh: 1
---- !u!1 &1420258104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1420258106}
-  - component: {fileID: 1420258105}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1420258105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420258104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40587e01c0e23f74c9872eedbf9e43a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBar: {fileID: 278128313}
-  _player: {fileID: 585880939025609092}
---- !u!4 &1420258106
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420258104}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1630457688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5924314146144465441, guid: 67152860e5fc3da419d8c9eff5024a22, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 278128313}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67152860e5fc3da419d8c9eff5024a22, type: 3}
 --- !u!114 &585880939025609092 stripped

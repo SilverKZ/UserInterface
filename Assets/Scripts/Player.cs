@@ -5,26 +5,27 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _maxHealth = 100f;
-    
-    private float _health;
+    [SerializeField] private HealthBar _healthBar;
 
-    public float MaxHealth { get { return _maxHealth; } }
-    public float Health { get { return _health; } }
+    private float _health;
 
     private void Start()
     {
         _health = _maxHealth;
+        _healthBar.SetMaxHealth(_maxHealth);
     }
 
     public void Damage(float damage)
     {
         _health -= damage;
         _health = (_health < 0) ? 0 : _health;
+        _healthBar.SetHealth(_health);
     }
 
     public void Heal(float health)
     {
         _health += health;
         _health = (_health > _maxHealth) ? _maxHealth : _health;
+        _healthBar.SetHealth(_health);
     }
 }
