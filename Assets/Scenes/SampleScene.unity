@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 278128314}
+  _player: {fileID: 585880939025609092}
 --- !u!114 &278128314
 MonoBehaviour:
   m_ObjectHideFlags: 0

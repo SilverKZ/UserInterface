@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private float _maxHealth;
     private float _health;
 
-    public event UnityAction<float> OnSetHealth;
+    public event UnityAction<float> HealthChanged;
 
     private void Start()
     {
@@ -19,19 +19,14 @@ public class Player : MonoBehaviour
     public void Damage(float damage)
     {
         _health -= damage;
-        _health = (_health < 0) ? 0 : _health;
-        SetHealth();
+        _health = Mathf.Clamp(_health, 0, _maxHealth);
+        HealthChanged?.Invoke(_health);
     }
 
     public void Heal(float health)
     {
         _health += health;
-        _health = (_health > _maxHealth) ? _maxHealth : _health;
-        SetHealth();
-    }
-
-    private void SetHealth()
-    {
-        OnSetHealth?.Invoke(_health);
+        _health = Mathf.Clamp(_health, 0, _maxHealth);
+        HealthChanged?.Invoke(_health);
     }
 }
